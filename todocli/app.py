@@ -18,7 +18,7 @@ class App:
     :type config: Config
     """
 
-    config: Config = Config()
+    config: Config
 
     def __post_init__(self) -> None:
         """Create sqlalchemy db session."""

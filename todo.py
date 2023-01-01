@@ -1,10 +1,10 @@
 """Main file for the todo cli application."""
-from todocli import App
+from todocli import App, Config
 
 
 def main() -> None:
     """Entry point for the todo cli application."""
-    app = App()
+    app = App(Config())
     app.run()
 
 
