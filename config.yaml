@@ -1,0 +1,7 @@
+# sqlalchemy db dialect
+db_dialect: "sqlite:///todo.sqlite"
+
+# check / uncheck icons emojis
+icons:
+  check: "✅"
+  uncheck: "❌"
