@@ -37,7 +37,7 @@ class TodoView:
         :type indexes: Optional[int  |  list[int]], optional
         """
         if isinstance(indexes, int):  # one item
-            todo = self.session.query(Todo).get(indexes)
+            todo = self.session.get(Todo, indexes)
             if todo:
                 print("\nuid | title | status")
                 print("-------------------")
@@ -71,7 +71,7 @@ class TodoView:
         :param check: todo status, defaults to None
         :type check: Optional[bool], optional
         """
-        todo: Todo = self.session.query(Todo).get(index)
+        todo: Todo = self.session.get(Todo, index)
         if todo:
             if title is not None:
                 todo.title = title
@@ -121,7 +121,7 @@ class TodoView:
         :type indexes: int | list[int]
         """
         if isinstance(indexes, int):
-            todo: Todo = self.session.query(Todo).get(indexes)
+            todo: Todo = self.session.get(Todo, indexes)
             if todo:
                 self.session.delete(todo)
                 self.session.commit()

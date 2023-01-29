@@ -40,7 +40,7 @@ def test_add_todo(
     """
     todo_view = TodoView(session)
     todo_view.add_todo(*inputs)
-    todo: Todo = session.query(Todo).get(index)
+    todo: Todo = session.get(Todo, index)
     assert expected.title == todo.title
     assert expected.check == todo.check
 
