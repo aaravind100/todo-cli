@@ -53,7 +53,7 @@ python todo.py list
 ```sh
 # output
 
-id | title | status
+uid | title | status
 -------------------
 1 | Hello, World | ❌
 2 | update todo readme | ✅
@@ -62,14 +62,14 @@ id | title | status
 - List by ids
 
 ```sh
-# python todo.py list [id ...]
+# python todo.py list [uid ...]
 python todo.py list 1
 ```
 
 ```sh
 # output
 
-id | title | status
+uid | title | status
 -------------------
 1 | Hello, World | ❌
 ```
@@ -77,7 +77,7 @@ id | title | status
 ### Update
 
 ```sh
-# python todo.py update id [title ...]
+# python todo.py update uid [title ...]
 python todo.py update 1 Hello, World updated
 ```
 
@@ -86,7 +86,7 @@ python todo.py update 1 Hello, World updated
 - Check by ids
 
 ```sh
-# python todo.py check [id ...]
+# python todo.py check [uid ...]
 python todo.py check 1
 ```
 
@@ -101,7 +101,7 @@ python todo.py check -a
 - Uncheck by ids
 
 ```sh
-# python todo.py uncheck [id ...]
+# python todo.py uncheck [uid ...]
 python todo.py uncheck 1
 ```
 
@@ -116,7 +116,7 @@ python todo.py uncheck -a
 - Delete by ids
 
 ```sh
-# python todo.py delete [id ...]
+# python todo.py delete [uid ...]
 python todo.py delete 1
 ```
 

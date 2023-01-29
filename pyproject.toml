@@ -7,21 +7,30 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pyyaml = {version = "^6.0", platform = "linux"}
-sqlalchemy = {version = "^1.4.45", platform = "linux"}
+pyyaml = { version = "^6.0", platform = "linux" }
+sqlalchemy = { version = "^1.4.46", platform = "linux" }
 
 [tool.poetry.group.dev.dependencies]
-autopep8 = "^2.0.1"
-pylint = "^2.15.9"
-pytest = "^7.2.0"
+black = "^22.12.0"
+pytest = "^7.2.1"
 pytest-cov = "^4.0.0"
+ruff = "^0.0.237"
+pre-commit = "^3.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.autopep8]
-max_line_length = 120
-in-place = true
-recursive = true
-aggressive = 3
+[tool.ruff]
+select = ["A", "B", "C", "D", "E", "F", "I", "Q"]
+fixable = ["A", "B", "C", "D", "E", "F"]
+ignore = ["D203", "D213"]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401", "D104"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
