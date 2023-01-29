@@ -7,9 +7,10 @@ from todocli.config import Icons
 
 class Todo(Base):
     """Todo item model."""
-    __tablename__ = 'todos'
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
+    __tablename__ = "todos"
+
+    uid = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(length=100))
     check = Column(Boolean, default=False)
 
@@ -25,12 +26,12 @@ class Todo(Base):
         self.check = check
 
     def __str__(self) -> str:
-        """String representation.
+        """User friendly representation.
 
         :return: string representation of todo item
         :rtype: str
         """
-        return f'{self.id} | {self.title} | {self.check_icon}'
+        return f"{self.uid} | {self.title} | {self.check_icon}"
 
     @property
     def check_icon(self) -> str:

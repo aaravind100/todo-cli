@@ -1,4 +1,4 @@
-name: Pylint/Pytest
+name: Ruff/Pytest
 
 on: [push]
 
@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install
-      - name: Analying the code with pylint
+      - name: Lint and format code
         run: |
-          poetry run pylint $(git ls-files '*.py')
+          poetry run pre-commit run --show-diff-on-failure
       - name: Testing the code with pytest
         run: |
           poetry run pytest --cov-report html --cov todocli/
