@@ -34,7 +34,7 @@ class TodoView:
         """List todo items.
 
         :param indexes: todo item uid, defaults to None
-        :type indexes: Optional[int  |  list[int]], optional
+        :type indexes: Optional[int | list[int]], optional
         """
         if isinstance(indexes, int):  # one item
             todo = self.session.get(Todo, indexes)
