@@ -5,7 +5,7 @@ A simple cli todo utility to demonstrates a CRUD application with database conne
 ## Requirements
 
 ```python
-python~=3.11
+python~=3.13
 PyYAML
 SQLAlchemy
 ```

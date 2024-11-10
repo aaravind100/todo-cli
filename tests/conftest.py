@@ -1,7 +1,7 @@
 """Test configurations."""
 
+from collections.abc import Iterator
 from pathlib import Path
-from typing import Iterator
 
 import pytest
 from sqlalchemy.orm import Session

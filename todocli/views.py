@@ -1,6 +1,7 @@
 """Views for todo model."""
+
+from collections.abc import Iterable
 from dataclasses import dataclass
-from typing import Iterable, Optional
 
 from sqlalchemy.orm import Session
 
@@ -30,7 +31,7 @@ class TodoView:
         self.session.commit()
         self.session.close()
 
-    def list_todo(self, indexes: Optional[int | list[int]] = None) -> None:
+    def list_todo(self, indexes: int | list[int] | None = None) -> None:
         """List todo items.
 
         :param indexes: todo item uid, defaults to None
@@ -60,7 +61,7 @@ class TodoView:
         self.session.close()
 
     def update_todo(
-        self, index: int, title: Optional[str] = None, check: Optional[bool] = None
+        self, index: int, title: str | None = None, check: bool | None = None
     ) -> None:
         """Update todo items.
 
@@ -83,7 +84,7 @@ class TodoView:
         self.session.close()
 
     def update_todo_check_many(
-        self, indexes: list[int], check: Optional[bool] = None
+        self, indexes: list[int], check: bool | None = None
     ) -> None:
         """Update status of many todo items.
 
@@ -101,7 +102,7 @@ class TodoView:
             self.session.commit()
         self.session.close()
 
-    def update_todo_all(self, check: Optional[bool] = None) -> None:
+    def update_todo_all(self, check: bool | None = None) -> None:
         """Update status of all todo items.
 
         :param check: todo status, defaults to None

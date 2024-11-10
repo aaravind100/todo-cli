@@ -1,6 +1,6 @@
 """Test todo views."""
 
-from typing import Iterable, Tuple
+from collections.abc import Iterable
 
 import pytest
 from pytest import CaptureFixture
@@ -25,7 +25,7 @@ from todocli.views import TodoView
     ),
 )
 def test_add_todo(
-    session: Session, inputs: Tuple[str, bool], expected: Todo, index: int
+    session: Session, inputs: tuple[str, bool], expected: Todo, index: int
 ) -> None:
     """Test add todo.
 
