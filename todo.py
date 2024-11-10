@@ -1,4 +1,5 @@
 """Main file for the todo cli application."""
+
 from todocli import App, Config
 
 

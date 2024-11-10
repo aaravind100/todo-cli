@@ -1,4 +1,5 @@
 """Models for todo database table."""
+
 from sqlalchemy import Boolean, Column, Integer, String
 
 from todocli.base import Base
